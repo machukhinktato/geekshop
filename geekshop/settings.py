@@ -24,10 +24,8 @@ SECRET_KEY = '@vy=p8)kpo+!x)kx5*(vvv8s!a#0umsxt+907tul+3pt(gxtrz'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-
 # ALLOWED_HOSTS = ['127.0.0.1']
 ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
@@ -64,6 +62,7 @@ if DEBUG:
     def show_toolbar(request):
         return True
 
+
     DEBUG_TOOLBAR_CONFIG = {
         'SHOW_TOOLBAR_CALLBACK': show_toolbar,
     }
@@ -85,7 +84,7 @@ if DEBUG:
         'template_profiler_panel.panels.template.TemplateProfilerPanel',
     ]
 
-    ROOT_URLCONF = 'geekshop.urls'
+ROOT_URLCONF = 'geekshop.urls'
 
 TEMPLATES = [
     {
@@ -112,22 +111,12 @@ WSGI_APPLICATION = 'geekshop.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-<<<<<<< HEAD
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-    'default': {
-        'NAME': 'geekshop',
-        'ENGINE': 'django.db.backends.postgresql',
-        'USER': 'django',
-        'PASSWORD': 'geekbrains',
-        'HOST': 'localhost',
-=======
-    # 'default': {
+
+    # default': {
     #     'ENGINE': 'django.db.backends.sqlite3',
     #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     # }
+
     'default': {
         'NAME': 'postgres',
         'ENGINE': 'django.db.backends.postgresql',
@@ -135,7 +124,6 @@ DATABASES = {
         'PASSWORD': 'geekbrains',
         'HOST': 'localhost',
         'PORT': '5432',
->>>>>>> hw_6
     }
 }
 
@@ -186,9 +174,7 @@ AUTH_USER_MODEL = 'authapp.ShopUser'
 
 LOGIN_URL = '/auth/login/'
 
-
 DOMAIN_NAME = 'http://localhost:8000'
-
 
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = '25'
@@ -204,7 +190,6 @@ with open('geekshop/vk.json', 'r') as f:
 
 SOCIAL_AUTH_VK_OAUTH2_KEY = VK['SOCIAL_AUTH_VK_OAUTH2_KEY']
 SOCIAL_AUTH_VK_OAUTH2_SECRET = VK['SOCIAL_AUTH_VK_OAUTH2_SECRET']
-
 
 # вариант python -m smtpd -n -c DebuggingServer localhost:25
 # EMAIL_HOST_USER, EMAIL_HOST_PASSWORD = None, None
